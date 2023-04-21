@@ -1,0 +1,43 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: #111;
+}
+h2 {
+  position: relative;
+  font-size: 6em;
+  color: #222;
+}
+
+h2::before {
+  content: attr(data-text);
+  position: absolute;
+  color: rgb(1, 158, 255);
+  width: 35px;
+  overflow: hidden;
+  white-space: nowrap;
+  border-right: 4px solid rgb(1, 158, 255);
+  animation: animate 8s linear infinite;
+  filter: drop-shadow(0 0 20px  rgb(1, 158, 255))
+    drop-shadow(0 0 50px rgb(255, 255, 255))
+    drop-shadow(0 0 20px rgb(255, 255, 255));
+}
+
+@keyframes animate {
+  0%,
+  10%,
+  100% {
+    width: 0;
+  }
+  70%,
+  90% {
+    width: 100%;
+  }
+}
